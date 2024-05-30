@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
@@ -20,11 +21,24 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import Home from './Home/Home.jsx';
+import Blog from './blog/Blog.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
+    element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <Home/>
+      },
+      {
+        path: "/blog",
+        element: <Blog/>
+
+      }
+    ],
   },
 ]);
 
